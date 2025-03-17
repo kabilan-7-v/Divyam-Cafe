@@ -16,8 +16,6 @@ function MenuPage() {
         <div className=' relative w-full bg-white h-full '
         ></div>
       
-
-
       </div>
       <div className='absolute top-[-100px] right-0 h-200 w-150 bg-amber-900'>
         <h1 className='text-[48px] font-normal font-[gloock] mt-24 ml-8'>
