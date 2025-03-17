@@ -8,8 +8,11 @@ import image3 from '../assets/samosaimage.png'
 
 function MenuPage() {
   return (<div className='relative  flex-col bg-white w-full h-320'>
-    <Lighttext text="Divyam" fontSize="280px" leftpadding="30px" />
-    <div className='relative flex-row bg-white w-full'>
+
+    <Lighttext   text="Divyam" fontSize="280px" leftpadding="30px" ismenu="true" />
+    
+
+    <div  className='relative flex-row bg-white w-full'>
       <div className='absolute flex-col w-full bg-white'>
         <h3 className='text-black pl-32 text-[24px]'>A progression of rare and beautiful ingrediens where texture,<br></br> flavour, and harmony is paramount.</h3>
         <Custombtn btnmane="Get Menu" />
@@ -17,7 +20,7 @@ function MenuPage() {
         ></div>
       
       </div>
-      <div className='absolute top-[-100px] right-0 h-200 w-150 bg-amber-900'>
+      <div    className=' absolute top-[-100px] right-0 h-200 w-150 bg-amber-900'>
         <h1 className='text-[48px] font-normal font-[gloock] mt-24 ml-8'>
           —Let’s talk about
         </h1>

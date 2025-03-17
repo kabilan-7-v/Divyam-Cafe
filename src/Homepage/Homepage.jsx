@@ -6,7 +6,7 @@ import Lighttext from '../Compounds/Lighttext';
 
 function Homepage() {
     return (
-        <div className="relative w-screen flex  items-center ">
+        <div id='Home' className="relative w-screen flex  items-center ">
 
             {/* Image & Background Container */}
             <div className="relative w-[650px] h-[455px] ">

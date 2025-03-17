@@ -14,7 +14,8 @@ function Commonpage() {
     <>
       {/* Desktop View */}
       <div className="hidden md:flex flex-col h-max w-full bg-white">
-        <Navbar />
+      <Navbar />
+
         <div className='md:h-15'></div>
         <Homepage />
         <Aboutus />

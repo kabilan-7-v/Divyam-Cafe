@@ -6,6 +6,12 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="p-4 relative w-full  overflow-x-hidden" style={{ backgroundColor: 'rgba(236, 232, 206, 1)' }}>
@@ -19,16 +25,25 @@ function Navbar() {
 
         {/* Desktop Links */}
         <ul className="hidden md:flex gap-12 text-lg font-medium text-gray-700">
-          {['Home', 'Menu', 'Feedback', 'Enquiry', 'About us' ,"   "].map((item) => (
-            <li
-              key={item}
-              className="hover:text-blue-500 cursor-pointer"
-              style={{ color: 'rgba(56, 136, 120, 1)' }}
-            >
-              {item}
-            </li>
-          ))}
-        </ul>
+  {[
+    { label: 'Home', id: 'home' },
+    { label: 'Menu', id: 'menu' },
+    { label: 'Feedback', id: 'feedback' },
+    { label: 'Enquiry', id: 'enquiry' },
+    { label: 'About us', id: 'about-us' },
+    { label: '      ', id: '' }
+
+  ].map((item) => (
+    <li
+      key={item.id}
+      className="hover:text-blue-500 cursor-pointer"
+      style={{ color: 'rgba(56, 136, 120, 1)' }}
+      onClick={() => scrollToSection(item.id)}
+    >
+      {item.label}
+    </li>
+  ))}
+</ul>
 
         {/* Hamburger Icon for Mobile */}
         <div className="md:hidden">

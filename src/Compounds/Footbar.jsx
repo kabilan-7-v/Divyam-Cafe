@@ -1,18 +1,25 @@
 import React from 'react'
 import '@fontsource/lato';
 import { MapPin, Mail, Phone } from 'lucide-react';
+import logo from '../assets/logowhite.png'
+
 
 function Footbar() {
   return (
     <div className='flex flex-col w-full bg-amber-950 p-8 items-center text-center'>
     <div className='flex flex-col md:flex-row justify-around items-center w-full'>
-        <div className='flex-wrap w-full text-start md:w-1/5 mb-4 md:mb-0'>
+    
+        <div className='flex-wrap w-full text-start justify-start items-start md:w-1/5 mb-4'>
+        <div className="w-40 h-15 mb-5">
+          <img src={logo} className=" w-full h-full object-cover">
+          </img>
+        </div>
             <h4>
                 Let Divyam Cafe transform your special occasion into a masterpiece with our professional touch.
             </h4>
         </div>
 
-        <div className='flex flex-col items-start mb-4 md:mb-0 text-start'>
+        <div className='flex flex-col justify-start space-y items-start mb-8 md:mb-0 text-start'>
             <h3
             className='
             font-bold font-[lato] text-[24px]'
@@ -23,7 +30,7 @@ function Footbar() {
             <h3 className='font-[lato]'   >Enquiry</h3>
         </div>
 
-        <div className='flex flex-col justify-start text-start space-y-4'>
+        <div className='flex flex-col justify-start text-start space-y-4 '>
     <h3 className='font-bold font-[lato] text-[24px]'>Contact Us</h3>
 
     <div className='flex items-start space-x-3'>
