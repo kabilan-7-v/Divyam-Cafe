@@ -1,5 +1,5 @@
 import React from 'react'
-import image from '../assets/homeimage.jpg'
+import image from '../assets/dosaiimage.png'
 import Custombtn from '../Compounds/Custombtn'
 
 

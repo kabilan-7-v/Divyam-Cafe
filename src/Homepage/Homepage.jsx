@@ -1,5 +1,5 @@
 import React from 'react'
-import image from '../assets/homeimage.jpg'
+import image from '../assets/welcomeimage.png'
 import '@fontsource/gloock';
 import '@fontsource/lato';
 import Lighttext from '../Compounds/Lighttext';
@@ -77,7 +77,7 @@ function Homepage() {
                 </p>
                 {/* Hidden for mobile, visible only for larger screens */}
                 <div className="hidden md:block">
-                    <Lighttext text="Pride" fontSize="280px" />
+                    <Lighttext text="Pride" fontSize="240px" />
                 </div>
 
                 {/* Smaller Lighttext for Mobile */}

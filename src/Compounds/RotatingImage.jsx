@@ -19,7 +19,7 @@ const RotatingImage = () => {
   }, [isPaused]);
 
   return (
-    <div className="flex justify-center items-center h-[400px] w-full bg-white pt-16 relative">
+    <div className="flex justify-center items-center  w-full bg-white pt-5 relative">
       {/* Rotating Image */}
       <img
         src={image1}

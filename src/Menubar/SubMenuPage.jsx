@@ -1,11 +1,13 @@
 import React from 'react'
 import '@fontsource/gloock';
 import Custombtn from '../Compounds/Custombtn';
+import image from '../assets/coffee.webp'
 
 function SubMenuPage() {
   return (
     <div className='relative flex flex-row w-full bg-white'>
       <div className='absolute w-120 h-150 bg-red-300 rounded-br-[350px]'>
+        <img src={image} alt="Divyam" className=' relative w-full h-full object-cover rounded-br-[350px]'></img>
       </div>
       <div className='relative w-120 h-80 left-10 top-80 border-amber-400 bg-transparent border-2  rounded-br-[350px]'>
       </div>

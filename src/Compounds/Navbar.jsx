@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import logo from '../assets/divyam logo brown-01.png'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +12,10 @@ function Navbar() {
       <div className="flex items-center justify-between">
         
         {/* Logo */}
-        <div className="w-[170px] text-xl font-bold text-teal-700">Divyam</div>
+        <div className="w-40 h-15">
+          <img src={logo} className=" w-full h-full object-cover">
+          </img>
+        </div>
 
         {/* Desktop Links */}
         <ul className="hidden md:flex gap-12 text-lg font-medium text-gray-700">

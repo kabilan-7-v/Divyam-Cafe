@@ -15,9 +15,8 @@ function Commonpage() {
       {/* Desktop View */}
       <div className="hidden md:flex flex-col h-max w-full bg-white">
         <Navbar />
-        <div className='md:h-40'></div>
+        <div className='md:h-15'></div>
         <Homepage />
-        <div className='md:h-20 bg-white'></div>
         <Aboutus />
         <RotatingImage />
         <MenuPage />
