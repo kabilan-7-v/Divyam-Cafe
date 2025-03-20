@@ -7,7 +7,7 @@ import image2 from '../assets/idlyimage.png'
 import image3 from '../assets/samosaimage.png'
 
 function MenuPage() {
-  return (<div className='relative  flex-col bg-white w-full h-320'>
+  return (<div id='menu' className='relative  flex-col bg-white w-full h-320'>
 
     <Lighttext   text="Divyam" fontSize="280px" leftpadding="30px" ismenu="true" />
     

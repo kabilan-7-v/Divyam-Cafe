@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '@fontsource/gloock';
+import Feedbackcard from '../Compounds/Feedbackcard';
 
 
 const testimonials = [
@@ -58,23 +59,18 @@ function CustomerTagPage() {
       ]
   };
   return (
-    <div className='bg-[#603913] text-white py-12 px-8 w-screen'>
+    <div className='bg-[#603913] text-white py-12 px-16 w-screen'>
     <h2 className='text-4xl font-bold text-center mb-6 font-[gloock]'>Some of Our Happy Customer</h2>
     <hr className='w-20 mx-auto border-t-2 border-white mb-8' />
     
 
-    <div className=''>
+    <div className='    justify-center items-center'>
      
-      <Slider className='m-8' {...settings}>
- 
-        {testimonials.map((item, index) => (
-          <div key={index} className='bg-white text-[#603913] w-80 p-6 rounded-lg shadow-md '>
-            <span className='text-6xl opacity-10 leading-none'>“</span>
-            <p className='text-sm mb-4'>{item.quote}</p>
-            <p className='italic font-semibold text-right'>— {item.author}</p>
-            <span className='text-6xl opacity-10 leading-none text-right'>”</span>
-          </div>
+      <Slider className='ml-16 mr-8 ' {...settings}>
+      {testimonials.map((item, index) => (
+         <Feedbackcard index={index} author={item.author} quote={item.quote}/>
         ))}
+        
       
       </Slider>
 

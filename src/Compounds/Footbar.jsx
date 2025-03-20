@@ -6,7 +6,7 @@ import logo from '../assets/logowhite.png'
 
 function Footbar() {
   return (
-    <div className='flex flex-col w-full bg-amber-950 p-8 items-center text-center'>
+    <div className='relative flex flex-col w-full bg-amber-950 p-8 items-center text-center'>
     <div className='flex flex-col md:flex-row justify-around items-center w-full'>
     
         <div className='flex-wrap w-full text-start justify-start items-start md:w-1/5 mb-4'>

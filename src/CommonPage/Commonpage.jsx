@@ -27,12 +27,7 @@ function Commonpage() {
         <Footbar />
       </div>
 
-      {/* Mobile View */}
-      <div className="block md:hidden bg-white ">
-        <div className='h-screen justify-center text-center items-center bg-white'>
-          <h1 className='text-red-600'>Welcome to Our Mobile Site is in construction field</h1>
-        </div>
-      </div>
+     
     </>
   )
 }
