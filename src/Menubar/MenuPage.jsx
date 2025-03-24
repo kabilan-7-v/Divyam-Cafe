@@ -5,6 +5,7 @@ import '@fontsource/gloock';
 import image1 from '../assets/dosaiimage1.png'
 import image2 from '../assets/idlyimage.png'
 import image3 from '../assets/samosaimage.png'
+import { Link } from 'react-router-dom';
 
 function MenuPage() {
   return (<div id='menu' className='relative  flex-col bg-white w-full h-320'>
@@ -15,7 +16,7 @@ function MenuPage() {
     <div  className='relative flex-row bg-white w-full'>
       <div className='absolute flex-col w-full bg-white'>
         <h3 className='text-black pl-32 text-[24px]'>A progression of rare and beautiful ingrediens where texture,<br></br> flavour, and harmony is paramount.</h3>
-        <Custombtn btnmane="Get Menu" />
+       <Link  to="/menu" style={{ textDecoration: "none", color: "inherit" }} ><Custombtn btnmane="Get Menu" /></Link> 
         <div className=' relative w-full bg-white h-full '
         ></div>
       

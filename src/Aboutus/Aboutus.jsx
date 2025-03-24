@@ -1,29 +1,32 @@
 import React from 'react'
 import image from '../assets/dosaiimage.png'
 import Custombtn from '../Compounds/Custombtn'
+import { Link } from 'react-router-dom';
 
 
 function Aboutus() {
   return (
-    <div className="grid grid-cols-2 gap-4 p-4 bg-white ">
+    <div className="md:grid md:grid-cols-2 md:gap-4  md:pt-32 bg-white ">
 
 
 
 
 
       <div className="w-full">
-        <h2 className=" w-[550px] 
-        h-[155px] 
+        <h2 className=" md:w-[550px] 
+        text-[44px]
+        md:h-[155px] 
         font-[Gloock] 
         font-bold 
-        text-[66px] 
-        leading-[100%] 
+        md:text-[66px] 
+        md:leading-[100%] 
         tracking-[0.04em] 
         text-[#603913] 
-        pl-32
+        md:pl-32
+        pl-8
         
 
-        mt-2">Learn more<br />About us</h2>
+       md:mt-2">Learn more<br />About us</h2>
 
 <p
                     className="
@@ -41,7 +44,9 @@ function Aboutus() {
     ">
           Our current beans line up for filter coffee. We will add new selection for the guest beans. Keep you guys updated on this page.
         </p>
-        <Custombtn btnmane="READ ME"/>
+        <Link to="/aboutus" style={{ textDecoration: "none", color: "inherit" }}>
+  <Custombtn btnmane="READ ME" />
+</Link>
       </div>
 
 

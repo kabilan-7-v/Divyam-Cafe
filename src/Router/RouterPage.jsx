@@ -6,6 +6,7 @@ import AboutusPage from '../Aboutus/AboutusPage';
 import FeedbackPage from '../Feedback/FeedbackPage';
 import MenuCardPage from '../Menubar/MenuCardPage';
 import EnquiryPage from '../EnquiryPage/EnquiryPage';
+import Attractionpage from '../Attraction/Attractionpage';
 
 function RouterPage() {
   return (
@@ -24,6 +25,8 @@ function RouterPage() {
          <Route path='/enquiry' element ={<EnquiryPage/>}></Route>
 
         <Route path='/aboutus' element ={<AboutusPage/>}></Route>
+        <Route path='/attraction' element ={<Attractionpage/>}></Route>
+
 
       </Routes>
     </BrowserRouter>

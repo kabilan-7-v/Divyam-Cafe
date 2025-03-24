@@ -1,18 +1,22 @@
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/divyam logo brown-01.png'
 
 function Navbar() {
+  const location = useLocation();
+
+  // Function to check if the link is active
+  const isActive = (path) => location.pathname === path;
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // const scrollToSection = (id) => {
+  //   const section = document.getElementById(id);
+  //   if (section) {
+  //     section.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // };
 
   return (
     <div className="p-4 relative w-full overflow-x-hidden" style={{ backgroundColor: 'rgba(236, 232, 206, 1)' }}>
@@ -35,9 +39,10 @@ function Navbar() {
              (
               <li
                 key={item.path}
-                className="hover:text-blue-500 cursor-pointer"
+                className={`text-[18px] ${isActive(item.path) ? "text-amber-950 font-bold" : "text-green-800 font-normal hover:text-amber-950"}`}
               >
-                <Link to={item.path} style={{ color: 'rgba(56, 136, 120, 1)' }}>{item.label}</Link>
+                  <Link to={item.path} style={{ textDecoration: "none", color: "inherit" }}>{item.label}</Link>
+
               </li>)
             // ) : (
             //   <li
@@ -53,7 +58,7 @@ function Navbar() {
         </ul>
 
         {/* Hamburger Icon for Mobile */}
-        <div className="md:hidden">
+        <div className=" md:hidden">
           <button onClick={toggleMenu}>
             {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
           </button>
@@ -76,7 +81,7 @@ function Navbar() {
                   key={item.path}
                   className="hover:text-blue-500 cursor-pointer w-full border-b border-gray-200 py-2"
                 >
-                  <Link to={item.path} style={{ color: 'rgba(56, 136, 120, 1)' }}>{item.label}</Link>
+                  <Link to={item.path} style={{ textDecoration: "none", color: "inherit" }}>{item.label}</Link>
                 </li>
               
               ))
