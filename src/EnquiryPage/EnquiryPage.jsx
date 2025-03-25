@@ -8,7 +8,7 @@ import '@fontsource/lato';
 
 function EnquiryPage() {
   return (
-    <div className="hidden md:flex flex-col h-full w-screen bg-white items-center">
+    <div className=" md:flex flex-col h-full w-screen bg-white items-center">
         <Navbar/>
         <div className='relative' >
             <img

@@ -46,7 +46,7 @@ function CustomerTagPage() {
           settings: {
             slidesToShow: 2,
             slidesToScroll: 2,
-            initialSlide: 2
+            initialSlide: 1
           }
         },
         {
@@ -66,7 +66,7 @@ function CustomerTagPage() {
 
     <div className='    justify-center items-center'>
      
-      <Slider className='ml-16 mr-8 ' {...settings}>
+      <Slider className='md:ml-16 md:mr-8 ' {...settings}>
       {testimonials.map((item, index) => (
          <Feedbackcard index={index} author={item.author} quote={item.quote}/>
         ))}

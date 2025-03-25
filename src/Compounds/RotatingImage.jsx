@@ -19,7 +19,8 @@ const RotatingImage = () => {
   }, [isPaused]);
 
   return (
-    <div className="flex justify-center items-center  w-full bg-white pt-5 relative">
+    <>
+    <div className="md:flex justify-center items-center  w-full  pt-5 relative hidden">
       {/* Rotating Image */}
       <img
         src={image1}
@@ -38,6 +39,26 @@ const RotatingImage = () => {
         className="absolute w-20 h-20"
       />
     </div>
+    <div className=" flex justify-center items-center  w-full pt-5 relative top-170">
+      {/* Rotating Image */}
+      <img
+        src={image1}
+        alt="Main Dish"
+        className="object-contain max-w-full max-h-full"
+        style={{
+          transform: `rotate(${rotation}deg)`,
+          transition: 'transform 1s linear',
+        }}
+      />
+
+      {/* Fixed Center Image */}
+      <img
+        src={image2}
+        alt="Center Image"
+        className="absolute w-20 h-20"
+      />
+    </div>
+    </>
   );
 };
 

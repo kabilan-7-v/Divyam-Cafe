@@ -8,7 +8,7 @@ import '@fontsource/lato';
 
 function AboutusPage() {
   return (
-    <div className="hidden md:flex flex-col h-full w-screen bg-white justify-center items-center">
+    <div className="md:flex flex-col h-full w-screen bg-white justify-center items-center">
 
       <Navbar />
       <h5 className='text-[250%]  text-[#603913] font-[gloock] text-center  mt-5 '>

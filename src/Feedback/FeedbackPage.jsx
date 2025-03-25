@@ -54,12 +54,12 @@ const testimonials = [
    
   ];
   return (
-    <div className="hidden md:flex flex-col h-full w-screen bg-white items-center">
+    <div className=" flex flex-col h-full w-screen bg-white items-center">
         <Navbar/>
-        <h5 className='text-[250%]  text-[#603913] font-[gloock] text-center  mt-5 '>
+        <h5 className='md:text-[250%] text-[22px] text-[#603913] font-[gloock] text-center  mt-5 '>
 Some of Our Happy Customer
 </h5>
-<div className='h-0.5 mt-2 w-60 bg-[#603913] justify-center items-center'></div>
+<div className='h-0.5 mt-2 md:w-60 w-40 bg-[#603913] justify-center items-center'></div>
 <div className='flex flex-wrap   justify-center '>
 {testimonials.map((item, index) => (
     <div className='mt-5 flex-basis-[15%]'>
