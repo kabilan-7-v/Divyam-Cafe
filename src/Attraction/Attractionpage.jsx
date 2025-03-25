@@ -11,7 +11,7 @@ function Attractionpage() {
     }, []);
     const fetchPlaces = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/api/getplace');
+            const response = await axios.get('https://divyamcafe-backend.onrender.com/api/getplace');
             console.log(response.data);
 
             // Extract the places array from the response
