@@ -66,7 +66,7 @@ function CustomerTagPage() {
 
     <div className='    justify-center items-center'>
      
-      <Slider className='md:ml-16 md:mr-8 ' {...settings}>
+      <Slider className='md:ml-16 md:mr-8 ml-2 mr-2' {...settings}>
       {testimonials.map((item, index) => (
          <Feedbackcard index={index} author={item.author} quote={item.quote}/>
         ))}

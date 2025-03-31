@@ -71,7 +71,7 @@ function Attraction() {
           </h4>
           <h4 className='text-[20px] font-[gloock] pl-22'>Nearby</h4>
           <h4 className='text-[20px] font-[gloock] pl-14'>Attractions</h4>
-          <div className='relative w-[55%]  bg-white left-5 top-10'>
+          <div className='relative w-[40%]  bg-white left-5 top-10'>
 
             <img src={image} alt="Divyam" className='w-full h-full object-cover'></img>
 
@@ -84,7 +84,7 @@ function Attraction() {
 
           </div>
 
-          <div className='relative w-[50%]  bg-white left-35 bottom-12'>
+          <div className='relative w-[40%]  bg-white left-35 bottom-12'>
             <img src={image1} alt="Divyam" className='w-full h-full object-cover'></img>
             <Link to="/attraction" style={{ textDecoration: "none", color: "inherit" }}>
               <div className='relative flex flex-row bg-white h-15 w-full shadow-md shadow-gray-400 justify-center items-center gap-2 p-2'>
@@ -95,7 +95,7 @@ function Attraction() {
 
 
           </div>
-          <div className='relative w-[50%]  bg-amber-500 left-62 bottom-34 '>
+          <div className='relative w-[40%]  bg-amber-500 left-65 bottom-34 '>
             <img src={image2} alt="Divyam" className='w-full h-full object-cover'></img>
             <Link to="/attraction" style={{ textDecoration: "none", color: "inherit" }}>
               <div className='relative flex flex-row bg-white h-15 w-full shadow-md shadow-gray-400 justify-center items-center gap-2 p-2'>

@@ -25,10 +25,10 @@ function SubMenuPage() {
       </div>
     </div>
     <div className='relative  flex-row w-full  top-150 md:hidden'>
-      <div className='absolute w-90 h-100 bg-red-300 rounded-br-[350px]'>
+      <div className='absolute w-70 h-100 bg-red-300 rounded-br-[350px]'>
         <img src={image} alt="Divyam" className=' relative w-full h-full object-cover rounded-br-[350px]'></img>
       </div>
-      <div className='relative w-90 h-80 left-10 top-30 border-amber-400 bg-transparent border-2  rounded-br-[350px]'>
+      <div className='relative w-70 h-80 left-10 top-30 border-amber-400 bg-transparent border-2  rounded-br-[350px]'>
       </div>
       <div className="relative max-w-2xl  m-8  mt-32">
         <blockquote className="text-4xl font-bold text-[#663900] italic leading-snug font-[gloock] ">
