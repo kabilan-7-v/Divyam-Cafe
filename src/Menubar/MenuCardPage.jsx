@@ -13,7 +13,7 @@ function MenuCardPage() {
   }, []);
   const Getmenucard = async () => {
     try {
-      const response = await axios.get("https://divyamcafe-backend.onrender.com/api/getmenucard");
+      const response = await axios.get("https://divyamcafe-backend-39ny.onrender.com/api/getmenucard");
       console.log(response.data.data)
       setGetmenucard(response.data.data); // Assuming response structure { status: true, data: [...] }
     } catch (error) {
