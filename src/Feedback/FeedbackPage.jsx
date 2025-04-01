@@ -57,13 +57,13 @@ function FeedbackPage() {
       {loading ? (
                <div className='h-100'> <p className="text-center text-black text-4xl mt-25">Loading...</p></div>
 
-      ) : error ? (
+      ): testimonials.length === 0 ? (
+        <div className="h-100 flex flex-col justify-center items-center"> <h1 className="text-black text-2xl text-center mt-5">
+           NO FEEDBACK FOUND
+         </h1>
+         </div>
+       )  : error ? (
         <p className="text-center text-red-500 mt-5">{error}</p>
-      ) : testimonials.length === 0 ? (
-       <div className="h-100 flex flex-col justify-center items-center"> <h1 className="text-black text-2xl text-center mt-5">
-          NO FEEDBACK FOUND
-        </h1>
-        </div>
       ) : (
         <div className="flex flex-wrap justify-center">
 
