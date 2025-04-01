@@ -26,7 +26,7 @@ function Attraction() {
 
             <Link to="/attraction" style={{ textDecoration: "none", color: "inherit" }}>   <div className='relative flex flex-row bg-white h-15 w-full shadow-md shadow-gray-400 justify-center items-center gap-2 p-2'>
               <img src={viewmoreicon} alt="View More Icon" className='w-5 h-5' />
-              <h4 className='text-black text-[16px]  hover:text-amber-900'>View More</h4>
+              <h5 className='text-black md:text-[16px] text-[12px]  hover:text-amber-900'>View More</h5>
             </div>
             </Link>
 

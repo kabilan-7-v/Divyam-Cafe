@@ -1,83 +1,88 @@
-import React from 'react'
-import '@fontsource/gloock';
-import Navbar from '../Compounds/Navbar';
-import Footbar from '../Compounds/Footbar';
-import Feedbackcard from '../Compounds/Feedbackcard';
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import "@fontsource/gloock";
+import Feedbackcard from "../Compounds/Feedbackcard";
+import Footbar from "../Compounds/Footbar";
+import Navbar from "../Compounds/Navbar";
+import { Link } from "react-router-dom";
+
 function FeedbackPage() {
+  const [testimonials, setTestimonials] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-const testimonials = [
-    {
-      quote: "One of the best place to visit and hang out. Good service and lot of spots to take a photo",
-      author: "Quinta Adelia"
-    },
-    {
-      quote: "Cozy place with many instagrammable spots, but most importantly excellent service and tasty food with reasonable price",
-      author: "Natasya"
-    },
-    {
-      quote: "This place where you can got a good atmosphere and good food, the owner have good taste high enough",
-      author: "Yosina Ribkah Kalalo"
-    }, {
-        quote: "One of the best place to visit and hang out. Good service and lot of spots to take a photo",
-        author: "Quinta Adelia"
-      },
-      {
-        quote: "Cozy place with many instagrammable spots, but most importantly excellent service and tasty food with reasonable price",
-        author: "Natasya"
-      },
-      {
-        quote: "This place where you can got a good atmosphere and good food, the owner have good taste high enough",
-        author: "Yosina Ribkah Kalalo"
-      }, {
-        quote: "One of the best place to visit and hang out. Good service and lot of spots to take a photo",
-        author: "Quinta Adelia"
-      },
-      {
-        quote: "Cozy place with many instagrammable spots, but most importantly excellent service and tasty food with reasonable price",
-        author: "Natasya"
-      },
-      {
-        quote: "This place where you can got a good atmosphere and good food, the owner have good taste high enough",
-        author: "Yosina Ribkah Kalalo"
-      },{
-        quote: "One of the best place to visit and hang out. Good service and lot of spots to take a photo",
-        author: "Quinta Adelia"
-      },
-      {
-        quote: "Cozy place with many instagrammable spots, but most importantly excellent service and tasty food with reasonable price",
-        author: "Natasya"
-      },
-      {
-        quote: "This place where you can got a good atmosphere and good food, the owner have good taste high enough",
-        author: "Yosina Ribkah Kalalo"
-      }
-   
-  ];
+  // Fetch feedback data
+  const fetchFeedbacks = async () => {
+    try {
+      const response = await axios.get("https://divyamcafe-backend-39ny.onrender.com/api/getallfeedback");
+
+      // Filter only entries where isbutton is true
+      const filteredFeedbacks = response.data.feedbacks.filter(
+        (item) => item.isbutton == true
+      );
+
+      setTestimonials(filteredFeedbacks);
+      console.log(filteredFeedbacks);
+      setLoading(false);
+    } catch (err) {
+      setError("Failed to load feedbacks");
+      console.error(err);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchFeedbacks();
+  }, []);
+
   return (
-    <div className=" flex flex-col h-full w-screen bg-white items-center">
-        <Navbar/>
-        <h5 className='md:text-[250%] text-[22px] text-[#603913] font-[gloock] text-center  mt-5 '>
-Some of Our Happy Customer
-</h5>
-<div className='h-0.5 mt-2 md:w-60 w-40 bg-[#603913] justify-center items-center'></div>
-<div className='flex flex-wrap   justify-center '>
-{testimonials.map((item, index) => (
-    <div className='mt-5 flex-basis-[15%]'>
-         < Feedbackcard index={index} author={item.author} quote={item.quote}/>
-         </div>
-        ))}
+    <div className="flex flex-col h-full w-screen bg-white">
+      <Navbar />
+      <h5 className="md:text-[250%] text-[22px] text-[#603913] font-[gloock] text-center mt-5 items-center">
+        Some of Our Happy Customers
+      </h5>
+      <div className="flex items-center justify-center">
+        <div className="h-0.5 mt-2 md:w-60 w-40 bg-[#603913]"></div>
+      </div>
+      <div className="flex justify-end">
+        <Link to={"/addfeedback"}>
+          <div className="bg-amber-900 mr-16 rounded-xl">
+            <h5 className="text-white text-[24px] font-bold text-center p-4">
+              + Add Feedback
+            </h5>
+          </div>
+        </Link>
+      </div>
 
-        
-    
-</div>
-<div className='h-8 '>
+      {loading ? (
+               <div className='h-100'> <p className="text-center text-black text-4xl mt-25">Loading...</p></div>
 
-</div>
-       <Footbar/>
+      ) : error ? (
+        <p className="text-center text-red-500 mt-5">{error}</p>
+      ) : testimonials.length === 0 ? (
+       <div className="h-100 flex flex-col justify-center items-center"> <h1 className="text-black text-2xl text-center mt-5">
+          NO FEEDBACK FOUND
+        </h1>
+        </div>
+      ) : (
+        <div className="flex flex-wrap justify-center">
+
+          {testimonials.map((item, index) => (
+            <div key={item._id || index} className="mt-5 flex-basis-[15%]">
+              <Feedbackcard
+                index={index}
+                author={item.name}
+                quote={item.feedback}
+              />
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div className="h-35"></div>
+      <Footbar />
     </div>
-  )
+  );
 }
 
-export default FeedbackPage
-
-{/*  */}
+export default FeedbackPage;

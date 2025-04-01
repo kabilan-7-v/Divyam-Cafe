@@ -19,6 +19,7 @@ import { Link } from 'react-router-dom';
 
 function Commonpage() {
   const [isOpen, setIsOpen] = useState(false);
+  
   const toggleMenu = () => setIsOpen(!isOpen);
 
 

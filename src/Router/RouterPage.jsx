@@ -7,6 +7,7 @@ import FeedbackPage from '../Feedback/FeedbackPage';
 import MenuCardPage from '../Menubar/MenuCardPage';
 import EnquiryPage from '../EnquiryPage/EnquiryPage';
 import Attractionpage from '../Attraction/Attractionpage';
+import FeedbackPopup from '../Compounds/feedbackpopup';
 
 function RouterPage() {
   return (
@@ -19,7 +20,11 @@ function RouterPage() {
         <Route path="/menu" element={<MenuCardPage/>}>
          
         </Route>
-        <Route path="/feedback" element={<FeedbackPage/>}>
+         <Route path="/feedback" element={<FeedbackPage/>}>
+         </Route>
+
+        <Route path="/addfeedback" element={<FeedbackPopup/>}>
+
          
          </Route>
          <Route path='/enquiry' element ={<EnquiryPage/>}></Route>
