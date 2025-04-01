@@ -62,9 +62,7 @@ function FeedbackPage() {
            NO FEEDBACK FOUND
          </h1>
          </div>
-       )  : error ? (
-        <p className="text-center text-red-500 mt-5">{error}</p>
-      ) : (
+       )  : (
         <div className="flex flex-wrap justify-center">
 
           {testimonials.map((item, index) => (
