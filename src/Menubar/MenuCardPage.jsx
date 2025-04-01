@@ -16,7 +16,7 @@ function MenuCardPage() {
   const Getmenucard = async () => {
     try {
       const response = await axios.get("https://divyamcafe-backend-39ny.onrender.com/api/getmenucard");
-      console.log(response.data.data)
+      console.log(response.data.data[0].imageurl)
       setGetmenucard(response.data.data); 
       setLoading(false);// Assuming response structure { status: true, data: [...] }
     } catch (error) {
@@ -44,7 +44,7 @@ function MenuCardPage() {
       (<div className=' flex flex-wrap m-12 '>
       {getmenucard.map((val, index) => (
         <div className='w-1/2 md:p-8 p-4 '>
-          <img src={image} className='object-cover'>
+          <img src={getmenucard[index].imageurl} className='object-cover'>
           </img>
         </div>
     ))}
