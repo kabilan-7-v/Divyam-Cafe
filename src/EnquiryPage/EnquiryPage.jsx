@@ -26,7 +26,7 @@ function EnquiryPage() {
             Sun : Closed
             </h2>
             <p className=" absolute md:top-90 top-80 mb-6 left-16">enquiry@divayam.com</p>
-            <form className="absolute top-100 grid grid-cols-1 md:grid-cols-2 gap-4 left-16 md:w-1/2 h-100">
+            <form className="absolute top-100 grid grid-cols-1 md:grid-cols-2 gap-4 md:left-16 left-2 md:w-1/2 h-100">
             <input className="bg-transparent border border-white p-2 w-full rounded-md  " type="text" placeholder="Name" />
             <input className="bg-transparent border border-white p-2 w-full rounded-md  " type="email" placeholder="Email" />
             <input className="bg-transparent border border-white p-2 w-full col-span-2 rounded-md" type="text" placeholder="Subject" />
