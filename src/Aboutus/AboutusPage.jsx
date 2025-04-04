@@ -25,7 +25,7 @@ function AboutusPage() {
         <div className="md:flex h-0.5 mt-2 w-60 bg-[#603913] justify-center items-center"></div>
       </div>
 
-      <div className="md:pl-16 md:flex p-8">
+      <div className="md:pl-16 md:flex p-8  ">
         <div className="absolute md:w-[28%] md:h-[500px] rounded-xl overflow-hidden w-[350px]">
           <img
             src={image}
@@ -46,7 +46,7 @@ function AboutusPage() {
       </div>
 
       <div className="flex flex-col items-start">
-        <div className="md:w-[75%]">
+        <div className="md:w-[75%] ">
           <p className="relative text-black md:text-[28px] font-[lato] leading-relaxed md:left-32 md:mt-12 p-8 md:p-0">
             <strong>What makes The Divyam Cafe unique?</strong>
             <br />
@@ -55,9 +55,19 @@ function AboutusPage() {
             open from 6:30 AM to 1:00 AM, serving customers from all walks of life.
           </p>
         </div>
+        <div className="md:w-[75%] ">
+          <p className="relative text-black md:text-[28px] font-[lato] leading-relaxed md:left-32 md:mt-12 p-8 md:p-0 mb-8">
+            <strong>What makes The Divyam Cafe unique?</strong>
+            <br />
+            The taste and quality of food are consistent across all outlets.
+            With uncompromised quality, it’s a one-of-a-kind South Indian café
+            open from 6:30 AM to 1:00 AM, serving customers from all walks of life.
+          </p>
+        </div>
+      <Footbar />
+
       </div>
 
-      <Footbar />
     </div>
   );
 }
