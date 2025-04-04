@@ -1,14 +1,19 @@
-import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/divyam logo brown-01.png';
+import { useSelector, useDispatch } from "react-redux";
+import { toggleNavbar,closeNavbar } from "../redux/navbarSlice";
+
 
 function Navbar() {
   const location = useLocation();
-  const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
+const isOpen = useSelector((state) => state.navbar.isOpen);
 
   const isActive = (path) => location.pathname === path;
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    dispatch(toggleNavbar());
+  };
 
   const navItems = [
     { label: 'Home', path: '/' },
@@ -59,28 +64,30 @@ function Navbar() {
           </button>
         </div>
       </div>
-
       {/* Mobile Drawer */}
       {isOpen && (
-        <div className="fixed   w-full bg-white shadow-md  ">
+  <div className="fixed w-full bg-white shadow-md">
+    <ul className="flex flex-col items-start gap-3 p-3 ">
+      {navItemsmobile.map((item) => (
+        <li
+          key={item.path}
+          className="w-full border-b border-gray-200 py-2 text-amber-900 hover:text-blue-500 cursor-pointer"
+        >
+          <Link
+            to={item.path}
+            style={{ textDecoration: "none", color: "inherit" }}
+            onClick={() => dispatch(closeNavbar())} // 👈 Close after click
+          >
+            {item.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
 
-          <ul className="flex flex-col items-start gap-3 p-3 ">
-            {navItemsmobile.map((item) => (
-              <li
-                key={item.path}
-                className="w-full border-b border-gray-200 py-2 text-amber-900 hover:text-blue-500 cursor-pointer"
-              >
-                <Link to={item.path} style={{ textDecoration: "none", color: "inherit" }}>
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        
 
-        </div>
-      )}
-
+    
       
       
     </div>

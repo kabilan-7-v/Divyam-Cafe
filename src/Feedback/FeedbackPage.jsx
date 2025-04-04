@@ -66,7 +66,7 @@ function FeedbackPage() {
         <div className="flex flex-wrap justify-center">
 
           {testimonials.map((item, index) => (
-            <div key={item._id || index} className="mt-5 flex-basis-[15%]">
+            <div key={item._id || index} className="mt-5 flex-basis-[18%]">
               <Feedbackcard
                 index={index}
                 author={item.name}

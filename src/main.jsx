@@ -3,9 +3,12 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import Commonpage from './CommonPage/Commonpage'
 import RouterPage from './Router/RouterPage'
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   <RouterPage/>
+    <Provider store={store}><RouterPage/></Provider>
+   
   </StrictMode>,
 )
