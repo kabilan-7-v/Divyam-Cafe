@@ -30,10 +30,10 @@ function AboutusPage() {
           <img
             src={image}
             alt="Main Dish"
-            className="md:w-300 md:h-full object-cover rounded-br-[250px] rounded-bl-[250px] h-120 w-[400px]"
+            className="md:w-300 md:h-full object-cover rounded-br-[250px] rounded-bl-[250px] h-[270px] w-[400px]"
           />
         </div>
-        <div className="relative bottom-[20px] right-[30px] md:h-[500px] md:w-[27%] w-[270px]   h-[270px] border-amber-400 bg-transparent border-2 rounded-br-[250px] rounded-bl-[250px]"></div>
+        <div className="relative bottom-[20px] right-[30px] md:h-[500px] md:w-[27%] w-[270px]  h-[270px] border-amber-400 bg-transparent border-2 rounded-br-[250px] rounded-bl-[250px]"></div>
         <div className="md:w-[50%]">
           <p className="relative text-black md:text-[32px] font-[lato] leading-relaxed md:left-32 md:mt-12 mt-30 left-0">
             The Divyam Cafe is a premium South Indian chain of QSR module and is
