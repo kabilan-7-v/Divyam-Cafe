@@ -44,10 +44,10 @@ function FeedbackPage() {
       <div className="flex items-center justify-center">
         <div className="h-0.5 mt-2 md:w-60 w-40 bg-[#603913]"></div>
       </div>
-      <div className="flex justify-end">
+      <div className="flex justify-end md:mt-0 mt-4">
         <Link to={"/addfeedback"}>
           <div className="bg-amber-900 mr-16 rounded-xl">
-            <h5 className="text-white text-[24px] font-bold text-center p-4">
+            <h5 className="text-white md:text-[24px] text-[18px] font-bold text-center p-4">
               + Add Feedback
             </h5>
           </div>
