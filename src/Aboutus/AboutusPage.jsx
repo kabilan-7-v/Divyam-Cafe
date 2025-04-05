@@ -25,17 +25,17 @@ function AboutusPage() {
         <div className="md:flex h-0.5 mt-2 w-60 bg-[#603913] justify-center items-center"></div>
       </div>
 
-      <div className="md:pl-16 md:flex p-8  ">
-        <div className="absolute md:w-[28%] md:h-[500px] rounded-xl overflow-hidden w-[270px]  h-[270px]">
+      <div className="md:pl-16 md:flex p-4  ">
+        <div className="absolute md:w-[28%] md:h-[500px] rounded-xl overflow-hidden w-[270px]  h-[270px] ml-5">
           <img
             src={image}
             alt="Main Dish"
             className="md:w-300 md:h-full object-cover rounded-br-[250px] rounded-bl-[250px] h-[270px] w-[400px]"
           />
         </div>
-        <div className="relative bottom-[20px] right-[30px] md:h-[500px] md:w-[27%] w-[270px]  h-[270px] border-amber-400 bg-transparent border-2 rounded-br-[250px] rounded-bl-[250px]"></div>
-        <div className="md:w-[50%]">
-          <p className="relative text-black md:text-[32px] font-[lato] leading-relaxed md:left-32 md:mt-12 mt-30 left-0">
+        <div className="relative bottom-[20px] right-[30px] md:h-[500px] md:w-[27%] w-[270px]  h-[270px] border-amber-400 bg-transparent border-2 rounded-br-[250px] rounded-bl-[250px] ml-5"></div>
+        <div className="md:w-[50%]  ">
+          <p className="relative text-black md:text-[32px] font-[lato] leading-relaxed md:left-32 md:mt-12 mt-10 left-0">
             The Divyam Cafe is a premium South Indian chain of QSR module and is
             a trademark registered brand under the mother company M/s. Altran
             Ventures Pvt. Ltd. At The Divyam Café, all cuisines are prepared
