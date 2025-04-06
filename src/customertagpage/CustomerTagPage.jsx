@@ -1,4 +1,5 @@
-import React from 'react'
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,21 +7,21 @@ import '@fontsource/gloock';
 import Feedbackcard from '../Compounds/Feedbackcard';
 
 
-const testimonials = [
-  {
-    quote: "One of the best place to visit and hang out. Good service and lot of spots to take a photo",
-    author: "Quinta Adelia"
-  },
-  {
-    quote: "Cozy place with many instagrammable spots, but most importantly excellent service and tasty food with reasonable price",
-    author: "Natasya"
-  },
-  {
-    quote: "This place where you can got a good atmosphere and good food, the owner have good taste high enough",
-    author: "Yosina Ribkah Kalalo"
-  }
+// const testimonials = [
+//   {
+//     quote: "One of the best place to visit and hang out. Good service and lot of spots to take a photo",
+//     author: "Quinta Adelia"
+//   },
+//   {
+//     quote: "Cozy place with many instagrammable spots, but most importantly excellent service and tasty food with reasonable price",
+//     author: "Natasya"
+//   },
+//   {
+//     quote: "This place where you can got a good atmosphere and good food, the owner have good taste high enough",
+//     author: "Yosina Ribkah Kalalo"
+//   }
  
-];
+// ];
 
 
 function CustomerTagPage() {
@@ -58,6 +59,33 @@ function CustomerTagPage() {
         }
       ]
   };
+  const [testimonials, setTestimonials] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  // Fetch feedback data
+  const fetchFeedbacks = async () => {
+    try {
+      const response = await axios.get("https://divyamcafe-backend-39ny.onrender.com/api/getallfeedback");
+
+      // Filter only entries where isbutton is true
+      const filteredFeedbacks = response.data.feedbacks.filter(
+        (item) => item.isbutton == true
+      );
+
+      setTestimonials(filteredFeedbacks);
+      console.log(filteredFeedbacks);
+      setLoading(false);
+    } catch (err) {
+      setError("Failed to load feedbacks");
+      console.error(err);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchFeedbacks();
+  }, []);
   return (
     <div className='bg-[#603913] text-white py-12 px-16 w-screen'>
     <h2 className='text-4xl font-bold text-center mb-6 font-[gloock]'>Some of Our Happy Customer</h2>
@@ -68,7 +96,9 @@ function CustomerTagPage() {
      
       <Slider className='md:ml-16 md:mr-8 ml-2 mr-2' {...settings}>
       {testimonials.map((item, index) => (
-         <Feedbackcard index={index} author={item.author} quote={item.quote}/>
+         <Feedbackcard  index={index}
+                author={item.name}
+                quote={item.feedback} />
         ))}
         
       
