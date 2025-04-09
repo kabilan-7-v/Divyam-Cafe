@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import image1 from "../assets/coffee.png";
-import image2 from "../assets/god.png";
+import { useEffect, useState } from 'react';
+import image1 from '../assets/coffee.png';
+import image2 from '../assets/god.png';
 
-const RotatingImage1 = () => {
+const RotatingImage = () => {
   const [rotation, setRotation] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -11,7 +11,7 @@ const RotatingImage1 = () => {
       if (!isPaused) {
         setRotation((prevRotation) => prevRotation + 90);
         setIsPaused(true); // Pause after rotating
-        setTimeout(() => setIsPaused(false), 500); // Resume after 1 second pause
+        setTimeout(() => setIsPaused(false),500); // Resume after 1 second pause
       }
     }, 2000); // Total cycle: 1 sec rotation + 1 sec pause
 
@@ -20,38 +20,46 @@ const RotatingImage1 = () => {
 
   return (
     <>
-      <div className="md:flex justify-center items-center  w-full  pt-5 relative hidden">
-        {/* Rotating Image */}
-        <img
-          src={image1}
-          alt="Main Dish"
-          className="object-contain max-w-full max-h-full"
-          style={{
-            transform: `rotate(${rotation}deg)`,
-            transition: "transform 1s linear",
-          }}
-        />
+    <div className="md:flex justify-center items-center  w-full  pt-5 relative hidden">
+      {/* Rotating Image */}
+      <img
+        src={image1}
+        alt="Main Dish"
+        className="object-contain max-w-full max-h-full"
+        style={{
+          transform: `rotate(${rotation}deg)`,
+          transition: 'transform 1s linear',
+        }}
+      />
 
-        {/* Fixed Center Image */}
-        <img src={image2} alt="Center Image" className="absolute w-20 h-20" />
-      </div>
-      <div className=" flex justify-center items-center  w-full pt-5 relative top-170">
-        {/* Rotating Image */}
-        <img
-          src={image1}
-          alt="Main Dish"
-          className="object-contain max-w-full max-h-full"
-          style={{
-            transform: `rotate(${rotation}deg)`,
-            transition: "transform 1s linear",
-          }}
-        />
+      {/* Fixed Center Image */}
+      <img
+        src={image2}
+        alt="Center Image"
+        className="absolute w-20 h-20"
+      />
+    </div>
+    <div className=" flex justify-center items-center  w-full pt-5 relative top-170">
+      {/* Rotating Image */}
+      <img
+        src={image1}
+        alt="Main Dish"
+        className="object-contain max-w-full max-h-full"
+        style={{
+          transform: `rotate(${rotation}deg)`,
+          transition: 'transform 1s linear',
+        }}
+      />
 
-        {/* Fixed Center Image */}
-        <img src={image2} alt="Center Image" className="absolute w-20 h-20" />
-      </div>
+      {/* Fixed Center Image */}
+      <img
+        src={image2}
+        alt="Center Image"
+        className="absolute w-20 h-20"
+      />
+    </div>
     </>
   );
 };
 
-export default RotatingImage1;
+export default RotatingImage;

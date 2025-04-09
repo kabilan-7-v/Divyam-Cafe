@@ -5,6 +5,7 @@ import Feedbackcard from "../Compounds/Feedbackcard";
 import Footbar from "../Compounds/Footbar";
 import Navbar from "../Compounds/Navbar";
 import { Link } from "react-router-dom";
+import RotatingImage1 from "../Compounds/Rotatingimage1";
 
 function FeedbackPage() {
   const [testimonials, setTestimonials] = useState([]);
@@ -57,10 +58,17 @@ function FeedbackPage() {
       </div>
 
       {loading ? (
-        <div className="h-100">
-          {" "}
-          <p className="text-center text-black text-4xl mt-25">Loading...</p>
-        </div>
+           <div className="h-150">
+         
+           <RotatingImage1 />
+           <p className="text-center text-black text-4xl mt-5">Loading...</p>
+ 
+           
+         </div>
+        // <div className="h-100">
+        //   {" "}
+        //   <p className="text-center text-black text-4xl mt-25">Loading...</p>
+        // </div>
       ) : testimonials.length === 0 ? (
         <div className="h-100 flex flex-col justify-center items-center">
           {" "}

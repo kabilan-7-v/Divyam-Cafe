@@ -36,7 +36,7 @@ const isOpen = useSelector((state) => state.navbar.isOpen);
   ];
 
   return (
-    <div className="md:p-4  w-screen md:overflow-x-hidden fixed z-50  " style={{ backgroundColor: 'rgba(236, 232, 206, 1)' }}>
+    <div className="md:p-4  w-screen md:overflow-x-hidden fixed md:z-50  top-0 " style={{ backgroundColor: 'rgba(236, 232, 206, 1)' }}>
       <div className="flex md:items-center justify-between   ">
         {/* Logo */}
         <div className="w-40 h-15">
@@ -66,8 +66,8 @@ const isOpen = useSelector((state) => state.navbar.isOpen);
       </div>
       {/* Mobile Drawer */}
       {isOpen && (
-  <div className="fixed w-full bg-white shadow-md">
-    <ul className="flex flex-col items-start gap-3 p-3 ">
+  <div className="fixed w-full bg-white shadow-md  top-0" >
+    <ul className="flex flex-col items-start gap-3 p-3  ">
       {navItemsmobile.map((item) => (
         <li
           key={item.path}

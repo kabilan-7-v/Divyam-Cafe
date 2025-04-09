@@ -7,7 +7,7 @@ import { Link,} from 'react-router-dom';
 
 function Footbar() {
     return (
-        <div className='relative flex flex-col w-full bg-amber-950 p-8 text-start'>
+        <div className='relative flex flex-col w-full bg-amber-950 p-8 text-start bottom-0'>
             <div className='flex flex-col md:flex-row justify-around w-full md:items-center'>
 
                 <div className='w-full md:w-1/5 mb-8 md:mb-0'>

@@ -21,7 +21,7 @@ function SubMenuPage() {
           Imagine having quality time with your family and friends in a comfortable, fully aesthetic space
           where you can enjoy various Asian fusion dishes and the finest bean coffee.
         </p>
-        <Custombtn btnmane="BOOK A TABLES" />
+        {/* <Custombtn btnmane="BOOK A TABLES" /> */}
       </div>
     </div>
     <div className='relative  flex-row w-full  top-150 md:hidden'>
@@ -40,7 +40,7 @@ function SubMenuPage() {
           Imagine having quality time with your family and friends in a comfortable, fully aesthetic space
           where you can enjoy various Asian fusion dishes and the finest bean coffee.
         </p>
-        <Custombtn btnmane="BOOK A TABLES" />
+        {/* <Custombtn btnmane="BOOK A TABLES" /> */}
       </div>
     </div>
     </>

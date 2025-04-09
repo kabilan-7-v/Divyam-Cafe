@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import image1 from '../assets/coffee.png';
-import image2 from '../assets/god.png';
+import { useEffect, useState } from "react";
+import image1 from "../assets/coffee.png";
+import image2 from "../assets/god.png";
 
-const RotatingImage = () => {
+const RotatingImage1 = () => {
   const [rotation, setRotation] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -19,26 +19,22 @@ const RotatingImage = () => {
   }, [isPaused]);
 
   return (
-    <div className="w-full flex justify-center items-center pt-8 relative h-[200px]">
-      {/* Rotating Background Image */}
+    <div className="flex justify-center items-center w-full pt-5 relative ">
+      {/* Rotating Image */}
       <img
         src={image1}
-        alt="Rotating"
-        className="w-40 h-40 object-contain"
+        alt="Main Dish"
+        className="object-contain max-w-full max-h-full"
         style={{
           transform: `rotate(${rotation}deg)`,
-          transition: 'transform 1s linear',
+          transition: "transform 1s linear",
         }}
       />
 
       {/* Fixed Center Image */}
-      <img
-        src={image2}
-        alt="Center"
-        className="absolute w-20 h-20"
-      />
+      <img src={image2} alt="Center Image" className="absolute w-20 h-20" />
     </div>
   );
 };
 
-export default RotatingImage;
+export default RotatingImage1;

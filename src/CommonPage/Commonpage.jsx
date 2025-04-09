@@ -14,6 +14,7 @@ import logo from "../assets/divyam logo brown-01.png";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleNavbar, closeNavbar } from "../redux/navbarSlice";
+import RotatingImage1 from "../Compounds/RotatingImage";
 
 function Commonpage() {
   const dispatch = useDispatch();
