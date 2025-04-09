@@ -3,24 +3,23 @@ import Navbar from "../Compounds/Navbar";
 import Footbar from "../Compounds/Footbar";
 import image from "../assets/dosaiimage.png";
 import "@fontsource/lato";
-import { useSelector } from "react-redux"; 
-
+import { useSelector } from "react-redux";
 
 function AboutusPage() {
   const isOpen = useSelector((state) => state.navbar.isOpen);
 
   return (
-    <div className="md:flex md:flex-col h-full w-screen bg-white justify-center items-center">
-
+    <div className="md:flex md:flex-col h-full w-screen bg-white ">
       <Navbar />
 
       {isOpen && <div className="h-40" />}
 
-      <h5 className="text-[250%] text-[#603913] font-[gloock] text-center mt-5">
+      <h5 className="text-[250%] text-[#603913] font-[gloock] text-center mt-25">
         About Us
       </h5>
-
-      <div className="md:flex h-0.5 mt-2 w-60 bg-[#603913] justify-center items-center hidden"></div>
+      <div className="flex justify-center">
+        <div className="md:flex h-0.5 mt-2 w-60 bg-[#603913] justify-center items-center hidden"></div>
+      </div>
       <div className="flex flex-col justify-center items-center mb-8 md:hidden">
         <div className="md:flex h-0.5 mt-2 w-60 bg-[#603913] justify-center items-center"></div>
       </div>
@@ -52,7 +51,8 @@ function AboutusPage() {
             <br />
             The taste and quality of food are consistent across all outlets.
             With uncompromised quality, it’s a one-of-a-kind South Indian café
-            open from 6:30 AM to 1:00 AM, serving customers from all walks of life.
+            open from 6:30 AM to 1:00 AM, serving customers from all walks of
+            life.
           </p>
         </div>
         <div className="md:w-[75%] ">
@@ -61,13 +61,12 @@ function AboutusPage() {
             <br />
             The taste and quality of food are consistent across all outlets.
             With uncompromised quality, it’s a one-of-a-kind South Indian café
-            open from 6:30 AM to 1:00 AM, serving customers from all walks of life.
+            open from 6:30 AM to 1:00 AM, serving customers from all walks of
+            life.
           </p>
         </div>
-      <Footbar />
-
+        <Footbar />
       </div>
-
     </div>
   );
 }

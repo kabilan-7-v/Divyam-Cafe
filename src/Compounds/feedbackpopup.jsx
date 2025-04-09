@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import backgroundimage from '../assets/coffee.webp';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { motion } from "framer-motion";
 
 function FeedbackPopup() {
   const navigate = useNavigate();
@@ -10,31 +11,36 @@ function FeedbackPopup() {
     email: "",
     phone: "",
     feedback: "",
+    rating: null,
     isbutton: false
   });
   const [errorMessage, setErrorMessage] = useState('');
+
+  const emojis = ["😠", "😐", "🙂", "😋", "🤤"];
+  const labels = ["Very Bad", "Average", "Good", "Tasty", "Excellent"];
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleRating = (index) => {
+    setFormData({ ...formData, rating: index });
+  };
+
   const handleSubmit = async () => {
-    if (formData.name && formData.email && formData.phone && formData.feedback) {
-      
+    if (isFormValid()) {
       try {
         const response = await axios.post("https://divyamcafe-backend-39ny.onrender.com/api/addfeedback", {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
           feedback: formData.feedback,
+          rating: labels[formData.rating],
           isbutton: false
         });
-        console.log(response.status)
-        
 
         if (response.status === 201) {
           alert("Feedback submitted successfully");
-          // Redirect to homepage after successful submission
           navigate('/');
         }
       } catch (error) {
@@ -46,15 +52,8 @@ function FeedbackPopup() {
     }
   };
 
-  const validatePhoneNumber = (phone) => {
-    const phoneRegex = /^\d{10}$/;
-    return phoneRegex.test(phone);
-  };
-  
-  const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
+  const validatePhoneNumber = (phone) => /^\d{10}$/.test(phone);
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const isFormValid = () => {
     return (
@@ -62,7 +61,8 @@ function FeedbackPopup() {
       formData.email &&
       validateEmail(formData.email) &&
       validatePhoneNumber(formData.phone) &&
-      formData.feedback.length > 0
+      formData.feedback.length > 0 &&
+      formData.rating !== null
     );
   };
 
@@ -74,11 +74,18 @@ function FeedbackPopup() {
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-black opacity-60"></div>
-      <div className="relative z-20 p-5 rounded-xl shadow-lg w-96 ">
-        <h2 className="text-xl font-bold mb-4">Add Feedback</h2>
+
+      {/* 🎉 Popup with Framer Motion animation */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.4 }}
+        className="relative z-20 p-5 rounded-xl shadow-2xl w-116 "
+      >
+        <h2 className="text-xl font-bold mb-4 text-center">Add Feedback</h2>
         
         {errorMessage && <p className="text-red-500 mb-3">{errorMessage}</p>}
-        
+
         <input
           name="name"
           placeholder="Name"
@@ -107,6 +114,32 @@ function FeedbackPopup() {
           <p className="text-red-500 text-sm mb-3">Please enter a valid 10-digit phone number.</p>
         )}
 
+        {/* 🎭 Emoji rating with animation */}
+        <div className="mb-4 text-center">
+          <p className="font-medium mb-2">How was the food?</p>
+          <div className="flex justify-between">
+            {emojis.map((emoji, index) => (
+              <motion.button
+                whileTap={{ scale: 1.3 }}
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                key={index}
+                onClick={() => handleRating(index)}
+                className={`text-2xl ${
+                  formData.rating === index ? 'scale-125' : ''
+                }`}
+              >
+                {emoji}
+              </motion.button>
+            ))}
+          </div>
+          {formData.rating !== null && (
+            <p className="text-sm text-white mt-3">
+              You selected: <span className="font-semibold">{labels[formData.rating]}</span>
+            </p>
+          )}
+        </div>
+
         <textarea
           name="feedback"
           placeholder="Feedback"
@@ -117,21 +150,25 @@ function FeedbackPopup() {
         />
         <p className="text-sm text-gray-400 mt-1">{formData.feedback.length}/120 characters</p>
 
-        <div className="flex justify-end gap-3">
-          <button 
+        <div className="flex justify-end gap-3 mt-4">
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
             className="px-4 py-2 rounded bg-gray-300 hover:bg-gray-400"
           >
             Cancel
-          </button>
-          <button
+          </motion.button>
+          <motion.button
+            whileTap={{ scale: 0.95 }}
             onClick={handleSubmit}
             disabled={!isFormValid()}
-            className={`px-4 py-2 rounded ${isFormValid() ? 'bg-blue-500 text-white hover:bg-blue-600' : 'bg-gray-400 text-gray-200 cursor-not-allowed'}`}
+            className={`px-4 py-2 rounded transition-all duration-300 ${
+              isFormValid() ? 'bg-blue-500 text-white hover:bg-blue-600' : 'bg-gray-400 text-gray-200 cursor-not-allowed'
+            }`}
           >
             Submit
-          </button>
+          </motion.button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

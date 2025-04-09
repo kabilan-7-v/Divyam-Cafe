@@ -36,8 +36,8 @@ const isOpen = useSelector((state) => state.navbar.isOpen);
   ];
 
   return (
-    <div className="md:p-4 relative w-screen md:overflow-x-hidden " style={{ backgroundColor: 'rgba(236, 232, 206, 1)' }}>
-      <div className="flex md:items-center justify-between  ">
+    <div className="md:p-4  w-screen md:overflow-x-hidden fixed z-50  " style={{ backgroundColor: 'rgba(236, 232, 206, 1)' }}>
+      <div className="flex md:items-center justify-between   ">
         {/* Logo */}
         <div className="w-40 h-15">
           <img src={logo} className="w-full h-full object-cover" alt="Logo" />

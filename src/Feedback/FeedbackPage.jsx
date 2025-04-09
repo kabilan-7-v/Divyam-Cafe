@@ -14,7 +14,9 @@ function FeedbackPage() {
   // Fetch feedback data
   const fetchFeedbacks = async () => {
     try {
-      const response = await axios.get("https://divyamcafe-backend-39ny.onrender.com/api/getallfeedback");
+      const response = await axios.get(
+        "https://divyamcafe-backend-39ny.onrender.com/api/getallfeedback"
+      );
 
       // Filter only entries where isbutton is true
       const filteredFeedbacks = response.data.feedbacks.filter(
@@ -38,7 +40,7 @@ function FeedbackPage() {
   return (
     <div className="flex flex-col h-full w-screen bg-white">
       <Navbar />
-      <h5 className="md:text-[250%] text-[22px] text-[#603913] font-[gloock] text-center mt-5 items-center">
+      <h5 className="md:text-[250%] text-[22px] text-[#603913] font-[gloock] text-center mt-27 items-center">
         Some of Our Happy Customers
       </h5>
       <div className="flex items-center justify-center">
@@ -55,16 +57,19 @@ function FeedbackPage() {
       </div>
 
       {loading ? (
-               <div className='h-100'> <p className="text-center text-black text-4xl mt-25">Loading...</p></div>
-
-      ): testimonials.length === 0 ? (
-        <div className="h-100 flex flex-col justify-center items-center"> <h1 className="text-black text-2xl text-center mt-5">
-           NO FEEDBACK FOUND
-         </h1>
-         </div>
-       )  : (
+        <div className="h-100">
+          {" "}
+          <p className="text-center text-black text-4xl mt-25">Loading...</p>
+        </div>
+      ) : testimonials.length === 0 ? (
+        <div className="h-100 flex flex-col justify-center items-center">
+          {" "}
+          <h1 className="text-black text-2xl text-center mt-5">
+            NO FEEDBACK FOUND
+          </h1>
+        </div>
+      ) : (
         <div className="flex flex-wrap justify-center">
-
           {testimonials.map((item, index) => (
             <div key={item._id || index} className="mt-5 flex-basis-[18%]">
               <Feedbackcard

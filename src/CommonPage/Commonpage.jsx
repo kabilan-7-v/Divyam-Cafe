@@ -33,17 +33,18 @@ function Commonpage() {
       {/* Desktop View */}
       <div className="hidden md:flex flex-col h-max w-full bg-white">
         <Navbar />
-
-        <div className="md:h-15"></div>
-        <Homepage />
-
-        <Aboutus />
-        <RotatingImage />
-        <MenuPage />
-        <SubMenuPage />
-        <Attraction />
-        <CustomerTagPage />
-        <Footbar />
+        <div className="relative pt-26">
+          {" "}
+          {/* 👈 Add this padding */}
+          <Homepage />
+          <Aboutus />
+          <RotatingImage />
+          <MenuPage />
+          <SubMenuPage />
+          <Attraction />
+          <CustomerTagPage />
+          <Footbar />
+        </div>
       </div>
 
       {/* Mobile View */}
