@@ -99,7 +99,9 @@ function CustomerTagPage() {
       {testimonials.map((item, index) => (
          <Feedbackcard  index={index}
                 author={item.name}
-                quote={item.feedback} />
+                quote={item.feedback}
+                rating={item.rating}
+                 />
         ))}
         
       

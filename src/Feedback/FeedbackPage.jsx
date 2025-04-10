@@ -84,6 +84,7 @@ function FeedbackPage() {
                 index={index}
                 author={item.name}
                 quote={item.feedback}
+                rating={item.rating}
               />
             </div>
           ))}
