@@ -31,7 +31,7 @@ function FeedbackPopup() {
       try {
         const response = await axios.post("https://divyamcafe-backend-39ny.onrender.com/api/addfeedback", {
           name: formData.name,
-          rating: labels[formData.rating],
+          rating:emojis[formData.rating]+" " +labels[formData.rating],
 
           phone: formData.phone,
           feedback: formData.feedback,

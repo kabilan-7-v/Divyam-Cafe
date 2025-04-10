@@ -71,7 +71,7 @@ function CustomerTagPage() {
 
       // Filter only entries where isbutton is true
       const filteredFeedbacks = response.data.feedbacks.filter(
-        (item) => item.isbutton == true
+        (item) => item.ishomepage == true
       );
 
       setTestimonials(filteredFeedbacks);
