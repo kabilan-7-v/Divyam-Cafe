@@ -30,6 +30,8 @@ function Footbar() {
                     <h3 className='font-[lato] hover:text-blue-400'>Feedback</h3></Link>
                     <Link to={"/enquiry"}  style={{ textDecoration: "none", color: "inherit" }} >
                     <h3 className='font-[lato] hover:text-blue-400'>Enquiry</h3></Link>
+                    <Link to={"/aboutus"}  style={{ textDecoration: "none", color: "inherit" }} >
+                    <h3 className='font-[lato] hover:text-blue-400'>About Us</h3></Link>
                 </div> 
 
                 <div className='flex flex-col space-y-4 md:items-start'>

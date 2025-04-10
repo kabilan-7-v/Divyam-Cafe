@@ -8,10 +8,12 @@ import MenuCardPage from '../Menubar/MenuCardPage';
 import EnquiryPage from '../EnquiryPage/EnquiryPage';
 import Attractionpage from '../Attraction/Attractionpage';
 import FeedbackPopup from '../Compounds/feedbackpopup';
+import ScrollToTop from '../Compounds/Scrolltop';
 
 function RouterPage() {
   return (
     <BrowserRouter>
+    <ScrollToTop/>
 
       <Routes>
         <Route path="/" element={<Commonpage/>}>
