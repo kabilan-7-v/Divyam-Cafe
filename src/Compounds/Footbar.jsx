@@ -26,8 +26,8 @@ function Footbar() {
                     </Link>
                     <Link to={"/menu"}  style={{ textDecoration: "none", color: "inherit" }} >
                     <h3 className='font-[lato] hover:text-blue-400'>Menu</h3></Link>
-                    <Link to={"/feedback"  } style={{ textDecoration: "none", color: "inherit" }}>
-                    <h3 className='font-[lato] hover:text-blue-400'>Feedback</h3></Link>
+                    <Link to={"/review"  } style={{ textDecoration: "none", color: "inherit" }}>
+                    <h3 className='font-[lato] hover:text-blue-400'>Review</h3></Link>
                     <Link to={"/enquiry"}  style={{ textDecoration: "none", color: "inherit" }} >
                     <h3 className='font-[lato] hover:text-blue-400'>Enquiry</h3></Link>
                     <Link to={"/aboutus"}  style={{ textDecoration: "none", color: "inherit" }} >
