@@ -8,7 +8,6 @@ function FeedbackPopup() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     phone: "",
     feedback: "",
     rating: null,
@@ -32,11 +31,12 @@ function FeedbackPopup() {
       try {
         const response = await axios.post("https://divyamcafe-backend-39ny.onrender.com/api/addfeedback", {
           name: formData.name,
-          email: formData.email,
+          rating: labels[formData.rating],
+
           phone: formData.phone,
           feedback: formData.feedback,
-          rating: labels[formData.rating],
-          isbutton: false
+          isbutton: false,
+          ishomepage:false
         });
 
         if (response.status === 201) {
@@ -53,13 +53,11 @@ function FeedbackPopup() {
   };
 
   const validatePhoneNumber = (phone) => /^\d{10}$/.test(phone);
-  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
 
   const isFormValid = () => {
     return (
       formData.name &&
-      formData.email &&
-      validateEmail(formData.email) &&
       validatePhoneNumber(formData.phone) &&
       formData.feedback.length > 0 &&
       formData.rating !== null
@@ -73,14 +71,14 @@ function FeedbackPopup() {
         alt="background"
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-black opacity-60"></div>
+      <div className="absolute inset-0 bg-black opacity-60 "></div>
 
       {/* 🎉 Popup with Framer Motion animation */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.4 }}
-        className="relative z-20 p-5 rounded-xl shadow-2xl w-116 "
+        className="relative z-20 p-5 rounded-xl shadow-2xl w-116  "
       >
         <h2 className="text-xl font-bold mb-4 text-center">Add Feedback</h2>
         
@@ -93,13 +91,7 @@ function FeedbackPopup() {
           className="w-full p-2 mb-3 border rounded"
           onChange={handleChange}
         />
-        <input
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          className="w-full p-2 mb-3 border rounded"
-          onChange={handleChange}
-        />
+      
         {formData.email && !validateEmail(formData.email) && (
           <p className="text-red-500 text-sm mb-3">Please enter a valid email address.</p>
         )}
@@ -113,7 +105,15 @@ function FeedbackPopup() {
         {formData.phone && !validatePhoneNumber(formData.phone) && (
           <p className="text-red-500 text-sm mb-3">Please enter a valid 10-digit phone number.</p>
         )}
-
+<textarea
+          name="feedback"
+          placeholder="Feedback"
+          className="w-full p-2 mb-3 border rounded"
+          value={formData.feedback}
+          maxLength={120}
+          onChange={handleChange}
+        />
+        <p className="text-sm text-gray-400 mt-1">{formData.feedback.length}/120 characters</p>
         {/* 🎭 Emoji rating with animation */}
         <div className="mb-4 text-center">
           <p className="font-medium mb-2">How was the food?</p>
@@ -140,15 +140,7 @@ function FeedbackPopup() {
           )}
         </div>
 
-        <textarea
-          name="feedback"
-          placeholder="Feedback"
-          className="w-full p-2 mb-3 border rounded"
-          value={formData.feedback}
-          maxLength={120}
-          onChange={handleChange}
-        />
-        <p className="text-sm text-gray-400 mt-1">{formData.feedback.length}/120 characters</p>
+        
 
         <div className="flex justify-end gap-3 mt-4">
           <motion.button 
