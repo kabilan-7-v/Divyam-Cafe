@@ -25,7 +25,7 @@ function Commonpage() {
   const navItemsmobile = [
     { label: "Home", path: "/" },
     { label: "Menu", path: "/menu" },
-    { label: "Feedback", path: "/feedback" },
+    { label: "Review", path: "/review" },
     { label: "Enquiry", path: "/enquiry" },
     { label: "About us", path: "/aboutus" },
   ];

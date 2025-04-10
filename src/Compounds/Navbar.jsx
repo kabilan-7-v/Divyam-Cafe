@@ -18,7 +18,7 @@ const isOpen = useSelector((state) => state.navbar.isOpen);
   const navItems = [
     { label: 'Home', path: '/' },
     { label: 'Menu', path: '/menu' },
-    { label: 'Feedback', path: '/feedback' },
+    { label: 'Review', path: '/review' },
     { label: 'Enquiry', path: '/enquiry' },
     { label: 'About us', path: '/aboutus' },
     { label: '      ', path: '' },
@@ -28,7 +28,7 @@ const isOpen = useSelector((state) => state.navbar.isOpen);
   const navItemsmobile = [
     { label: 'Home', path: '/' },
     { label: 'Menu', path: '/menu' },
-    { label: 'Feedback', path: '/feedback' },
+    { label: 'Review', path: '/review' },
     { label: 'Enquiry', path: '/enquiry' },
     { label: 'About us', path: '/aboutus' },
 

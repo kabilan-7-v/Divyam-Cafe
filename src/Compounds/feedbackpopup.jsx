@@ -27,30 +27,54 @@ function FeedbackPopup() {
   };
 
   const handleSubmit = async () => {
-    if (isFormValid()) {
-      try {
-        const response = await axios.post("https://divyamcafe-backend-39ny.onrender.com/api/addfeedback", {
-          name: formData.name,
-          rating:emojis[formData.rating]+" " +labels[formData.rating],
-
-          phone: formData.phone,
-          feedback: formData.feedback,
-          isbutton: false,
-          ishomepage:false
-        });
-
-        if (response.status === 201) {
-          alert("Feedback submitted successfully");
-          navigate('/');
-        }
-      } catch (error) {
-        setErrorMessage("An error occurred while submitting your feedback.");
-        console.error("Error submitting feedback:", error);
+    // Name check
+    if (!formData.name.trim()) {
+      alert("Please enter your name.");
+      return;
+    }
+  
+    // Phone check
+    if (!formData.phone.trim()) {
+      alert("Please enter your phone number.");
+      return;
+    } else if (!validatePhoneNumber(formData.phone)) {
+      alert("Please enter a valid 10-digit phone number.");
+      return;
+    }
+  
+    // Feedback check
+    if (!formData.feedback.trim()) {
+      alert("Please enter your feedback.");
+      return;
+    }
+  
+    // Rating check
+    if (formData.rating === null) {
+      alert("Please select a rating.");
+      return;
+    }
+  
+    // If everything is valid, send the data
+    try {
+      const response = await axios.post("https://divyamcafe-backend-39ny.onrender.com/api/addfeedback", {
+        name: formData.name,
+        rating: emojis[formData.rating] + " " + labels[formData.rating],
+        phone: formData.phone,
+        feedback: formData.feedback,
+        isbutton: false,
+        ishomepage: false
+      });
+  
+      if (response.status === 201) {
+        alert("Feedback submitted successfully!");
+        navigate('/');
       }
-    } else {
-      setErrorMessage("Please fill in all fields.");
+    } catch (error) {
+      console.error("Error submitting feedback:", error);
+      alert("Something went wrong while submitting your feedback. Please try again.");
     }
   };
+  
 
   const validatePhoneNumber = (phone) => /^\d{10}$/.test(phone);
 
@@ -80,7 +104,7 @@ function FeedbackPopup() {
         transition={{ duration: 0.4 }}
         className="relative z-20 p-5 rounded-xl shadow-2xl w-116  "
       >
-        <h2 className="text-xl font-bold mb-4 text-center">Add Feedback</h2>
+        <h2 className="text-xl font-bold mb-4 text-center">Add Review</h2>
         
         {errorMessage && <p className="text-red-500 mb-3">{errorMessage}</p>}
 
@@ -152,10 +176,8 @@ function FeedbackPopup() {
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={handleSubmit}
-            disabled={!isFormValid()}
-            className={`px-4 py-2 rounded transition-all duration-300 ${
-              isFormValid() ? 'bg-blue-500 text-white hover:bg-blue-600' : 'bg-gray-400 text-gray-200 cursor-not-allowed'
-            }`}
+           
+           className="px-4 py-2 rounded bg-gray-300 hover:bg-gray-400"
           >
             Submit
           </motion.button>

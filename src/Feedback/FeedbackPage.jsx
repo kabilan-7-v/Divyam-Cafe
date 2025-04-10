@@ -48,10 +48,10 @@ function FeedbackPage() {
         <div className="h-0.5 mt-2 md:w-60 w-40 bg-[#603913]"></div>
       </div>
       <div className="flex justify-end md:mt-0 mt-4">
-        <Link to={"/addfeedback"}>
+        <Link to={"/addreview"}>
           <div className="bg-amber-900 mr-16 rounded-xl">
             <h5 className="text-white md:text-[24px] text-[18px] font-bold text-center p-4">
-              + Add Feedback
+              + Add Review
             </h5>
           </div>
         </Link>
@@ -73,7 +73,7 @@ function FeedbackPage() {
         <div className="h-100 flex flex-col justify-center items-center">
           {" "}
           <h1 className="text-black text-2xl text-center mt-5">
-            NO FEEDBACK FOUND
+            NO Review FOUND
           </h1>
         </div>
       ) : (

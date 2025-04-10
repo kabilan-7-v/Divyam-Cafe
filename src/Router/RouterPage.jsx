@@ -22,10 +22,10 @@ function RouterPage() {
         <Route path="/menu" element={<MenuCardPage/>}>
          
         </Route>
-         <Route path="/feedback" element={<FeedbackPage/>}>
+         <Route path="/review" element={<FeedbackPage/>}>
          </Route>
 
-        <Route path="/addfeedback" element={<FeedbackPopup/>}>
+        <Route path="/addreview" element={<FeedbackPopup/>}>
 
          
          </Route>

@@ -83,7 +83,7 @@ function CustomerTagPage() {
           <hr className='w-20 mx-auto border-t-2 border-white mb-8' />
   
           <div className='justify-center items-center'>
-         {testimonials.length<3?(<div className="flex justify-center ">
+         {testimonials.length<=3?(<div className="flex justify-center ">
           {testimonials.map((item, index) => (
                 <Feedbackcard
                   key={index}
