@@ -34,7 +34,7 @@ function AboutusPage() {
         </div>
         <div className="relative bottom-[20px] right-[30px] md:h-[500px] md:w-[27%] w-[270px]  h-[270px] border-amber-400 bg-transparent border-2 rounded-br-[250px] rounded-bl-[250px] ml-5"></div>
         <div className="md:w-[60%]  ">
-          <h1 className="text-black font-[gloock] text-2xl md:left-32 relative">
+          <h1 className="text-black font-[gloock] md:text-2xl text-[18px] md:left-32 relative pt-4">
             Celebrating Authentic Udupi Based Cuisine & Our Culinary Legacy
           </h1>
           <p className="relative text-black md:text-[24px] font-[lato] leading-relaxed md:left-32 md:mt-12 mt-10 left-0">
@@ -53,8 +53,8 @@ function AboutusPage() {
       </div>
 
       <div className="flex flex-col items-start">
-        <div className="md:w-[85%] ">
-          <p className="relative text-black md:text-[28px] font-[lato] leading-relaxed md:left-32 md:mt-12 p-8 md:p-0">
+        <div className="md:w-[85%]  ">
+          <p className="relative text-black md:text-[28px] font-[lato] leading-relaxed md:left-32 md:mt-12 p-4 md:p-0">
             <strong className="font-[gloock] text-4xl">
               The Legacy of Divyam Cafe
             </strong>
@@ -66,7 +66,7 @@ function AboutusPage() {
             preparing our vegetarian dishes with the finest locally sourced
             ingredients and a deep respect for classic techniques.
           </p>
-          <p className="relative text-black md:text-[28px] font-[lato] leading-relaxed md:left-32 md:mt-12 p-8 md:p-0">
+          <p className="relative text-black md:text-[28px] font-[lato] leading-relaxed md:left-32 md:mt-12 p-4 md:p-0">
             <strong className="font-[gloock] text-4xl">
               Celebrating Udupi Based Cuisine
             </strong>
@@ -78,7 +78,7 @@ function AboutusPage() {
             recognition as one of the best restaurants in Puducherry by locals
             and visitors alike.
           </p>
-          <p className="relative text-black md:text-[28px] font-[lato] leading-relaxed md:left-32 md:mt-12 p-8 md:p-0">
+          <p className="relative text-black md:text-[28px] font-[lato] leading-relaxed md:left-32 md:mt-12 p-4 md:p-0">
             <strong className="font-[gloock] text-4xl">
               A Tradition of Authentic Flavors
             </strong>
@@ -90,7 +90,7 @@ function AboutusPage() {
             methods, as you soak in the warm ambience that reflects our
             heritage.
           </p>
-          <p className="relative text-black md:text-[28px] font-[lato] leading-relaxed md:left-32 md:mt-12 p-8 md:p-0 mb-8">
+          <p className="relative text-black md:text-[28px] font-[lato] leading-relaxed md:left-32 md:mt-12 p-4 md:p-0 mb-8">
             <strong className="font-[gloock] text-4xl mb-4">
               Welcoming You from Dawn to Dusk{" "}
             </strong>

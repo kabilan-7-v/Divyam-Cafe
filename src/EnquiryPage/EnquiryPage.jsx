@@ -10,7 +10,7 @@ function EnquiryPage() {
   return (
     <div className=" flex flex-col h-full w-screen bg-white items-center">
         <Navbar/>
-        <div className='md:relative' >
+        <div className='md:relative ' >
             <img
             src={image} className='md:h-full h-220 md:w-screen'></img>
             <h5 className='absolute text-[24px] md:text-[32px] font-[gloock] text-white top-25 left-16'>
