@@ -74,7 +74,8 @@ function CustomerTagPage() {
   }
 
   return (
-    <div>
+    <>
+    <div className="overflow-x-hidden hidden md:flex ">
       {testimonials.length !== 0 ?   (
         <div className='bg-[#603913] text-white py-12 px-16 w-screen'>
           <h2 className='text-4xl font-bold text-center mb-6 font-[gloock]'>
@@ -91,6 +92,7 @@ function CustomerTagPage() {
                   author={item.name}
                   quote={item.feedback}
                   rating={item.rating}
+                  ishomepage={true}
                 />
               ))}
          </div>) :( <Slider className='md:ml-16 md:mr-8 ml-2 mr-2' {...settings}>
@@ -101,6 +103,8 @@ function CustomerTagPage() {
                   author={item.name}
                   quote={item.feedback}
                   rating={item.rating}
+                  ishomepage={true}
+
                 />
               ))}
             </Slider>)}
@@ -111,6 +115,47 @@ function CustomerTagPage() {
         <div></div>
       )}
     </div>
+    <div className="overflow-x-hidden md:hidden ">
+      {testimonials.length !== 0 ?   (
+        <div className='bg-[#603913] text-white py-12 px-16 w-screen'>
+          <h2 className='text-4xl font-bold text-center mb-6 font-[gloock]'>
+            Some of Our Happy Customers
+          </h2>
+          <hr className='w-20 mx-auto border-t-2 border-white mb-8' />
+  
+          <div className='justify-center items-center'>
+          {testimonials.length==1?(<div className="flex justify-center ">
+          {testimonials.map((item, index) => (
+                <Feedbackcard
+                  key={index}
+                  index={index}
+                  author={item.name}
+                  quote={item.feedback}
+                  rating={item.rating}
+                  ishomepage={true}
+                />
+              ))}
+         </div>) :   (<Slider className='md:ml-16 md:mr-8 ml-2 mr-2' {...settings}>
+              {testimonials.map((item, index) => (
+                <Feedbackcard
+                  key={index}
+                  index={index}
+                  author={item.name}
+                  quote={item.feedback}
+                  rating={item.rating}
+                  ishomepage={true}
+
+                />
+              ))}
+            </Slider>)}
+          </div>
+        </div>
+      ) : 
+      (
+        <div></div>
+      )}
+    </div>
+    </>
   );}
 
 export default CustomerTagPage;

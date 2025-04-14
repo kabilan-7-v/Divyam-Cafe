@@ -49,8 +49,8 @@ function FeedbackPage() {
       </div>
       <div className="flex justify-end md:mt-0 mt-4">
         <Link to={"/addreview"}>
-          <div className="bg-amber-900 mr-16 rounded-xl">
-            <h5 className="text-white md:text-[24px] text-[18px] font-bold text-center p-4">
+          <div className="bg-amber-900 md:mr-16  mr-4 rounded-xl">
+            <h5 className="text-white md:text-[24px] text-[16px] font-bold text-center p-4">
               + Add Review
             </h5>
           </div>
@@ -91,7 +91,7 @@ function FeedbackPage() {
         </div>
       )}
 
-      <div className="h-35"></div>
+      <div className="md:h-35 h-4"></div>
       <Footbar />
     </div>
   );

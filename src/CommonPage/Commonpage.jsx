@@ -50,7 +50,7 @@ function Commonpage() {
 
       {/* Mobile View */}
 
-      <div className="md:hidden flex flex-col h-max w-full items-start justify-start ">
+      <div className="md:hidden flex flex-col h-max w-full items-start justify-start overflow-x-hidden ">
         <div
           className=" relative w-screen  "
           style={{ backgroundColor: "rgba(236, 232, 206, 1)" }}

@@ -61,7 +61,7 @@ function Attraction() {
 
 
 
-      <div className='relative h-screen mt-66 top-90 md:hidden mb-8 '>
+      <div className=' overflow-x-hidden relative h-screen mt-66 top-90 md:hidden mb-8 '>
         <h5 className='absolute text-[40px] text-[#3c504914] font-[gloock] right-10 top-20 '>
           Attraction
         </h5>
