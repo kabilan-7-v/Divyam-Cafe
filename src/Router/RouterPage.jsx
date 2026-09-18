@@ -9,11 +9,13 @@ import EnquiryPage from '../EnquiryPage/EnquiryPage';
 import Attractionpage from '../Attraction/Attractionpage';
 import FeedbackPopup from '../Compounds/feedbackpopup';
 import ScrollToTop from '../Compounds/Scrolltop';
+import ScrollToTopButton from '../Compounds/ScrollToTopButton';
 
 function RouterPage() {
   return (
     <BrowserRouter>
     <ScrollToTop/>
+    <ScrollToTopButton/>
 
       <Routes>
         <Route path="/" element={<Commonpage/>}>
