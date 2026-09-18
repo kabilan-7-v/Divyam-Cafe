@@ -7,6 +7,7 @@ import SubMenuPage from "../Menubar/SubMenuPage";
 import RotatingImage from "../Compounds/RotatingImage";
 import Attraction from "../Attraction/Attraction";
 import Footbar from "../Compounds/Footbar";
+import Footer from "../Compounds/Footer";
 import CustomerTagPage from "../customertagpage/CustomerTagPage";
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
@@ -45,6 +46,7 @@ function Commonpage() {
           <Attraction />
           <CustomerTagPage />
           <Footbar />
+          <Footer />
         </div>
       </div>
 
@@ -104,6 +106,7 @@ function Commonpage() {
         <Attraction />
         <CustomerTagPage />
         <Footbar />
+        <Footer />
       </div>
     </>
   );
