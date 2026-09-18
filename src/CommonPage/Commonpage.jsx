@@ -9,6 +9,7 @@ import Attraction from "../Attraction/Attraction";
 import Footbar from "../Compounds/Footbar";
 import Footer from "../Compounds/Footer";
 import CustomerTagPage from "../customertagpage/CustomerTagPage";
+import ContactForm from "../Compounds/ContactForm";
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import logo from "../assets/divyam logo brown-01.png";
@@ -45,6 +46,7 @@ function Commonpage() {
           <SubMenuPage />
           <Attraction />
           <CustomerTagPage />
+          <ContactForm />
           <Footbar />
           <Footer />
         </div>
@@ -105,6 +107,7 @@ function Commonpage() {
         <SubMenuPage />
         <Attraction />
         <CustomerTagPage />
+        <ContactForm />
         <Footbar />
         <Footer />
       </div>
